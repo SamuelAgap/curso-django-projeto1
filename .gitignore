@@ -1,3 +1,5 @@
 #Tudo dentro do .gitignore é ignorado pelo git, ou seja, não é enviado pro repositório
 venv
 "passo a passo.txt"
+.DS_Store
+.mypy_cache
