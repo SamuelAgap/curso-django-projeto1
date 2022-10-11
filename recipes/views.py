@@ -1,6 +1,5 @@
 from django.http import HttpResponse
-
-# from django.shortcuts import render
+from django.shortcuts import render
 
 # Quando digita a url do site, o usuário faz um REQUEST
 # Logo, o servidor deve retornar uma RESPONSE
@@ -9,7 +8,10 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse("Home")
+    return render(request, 'recipes/home.html', context={
+        'name': 'Samuel Ágap',
+    })
+    # O Django já sabe que vai buscar esse .html na pasta "templates" do app
 
 
 def sobre(request):
@@ -17,4 +19,6 @@ def sobre(request):
 
 
 def contato(request):
-    return HttpResponse("Contato")
+    return render(request, 'recipes/contato.html', context={
+        'name': 'Virgínia Silva',
+    })
